@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -8,510 +6,345 @@
 }
 
 body {
-    background: #070707;
+    font-family: Arial, sans-serif;
+    background: #0f0f1a;
     color: white;
-    font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
+    line-height: 1.6;
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background:
-        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
-    background-size: 50px 50px;
-    pointer-events: none;
-    z-index: -1;
-}
-
-
-/* NAVBAR */
+/* Navbar */
 
 header {
+    width: 100%;
+    background: rgba(15, 15, 26, 0.95);
     position: fixed;
     top: 0;
-    width: 100%;
-    padding: 25px 8%;
     z-index: 1000;
-    background: rgba(7,7,7,.75);
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(255,255,255,.08);
+    border-bottom: 1px solid #292940;
 }
 
 nav {
+    max-width: 1100px;
+    margin: auto;
+    height: 70px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
 }
 
 .logo {
-    font-family: 'Orbitron', sans-serif;
-    letter-spacing: 3px;
+    font-size: 25px;
 }
 
 .logo span {
-    color: #ff1744;
+    color: #a855f7;
 }
 
 nav ul {
     display: flex;
-    gap: 35px;
     list-style: none;
+    gap: 25px;
 }
 
-nav a {
-    color: white;
+nav ul li a {
     text-decoration: none;
-    font-size: 13px;
-    letter-spacing: 2px;
-    transition: .3s;
+    color: white;
+    transition: 0.3s;
 }
 
-nav a:hover {
-    color: #ff1744;
+nav ul li a:hover {
+    color: #a855f7;
 }
 
 
-/* HERO */
+/* Hero */
 
 .hero {
     min-height: 100vh;
-    padding: 150px 8% 80px;
+    max-width: 1100px;
+    margin: auto;
+    padding: 100px 25px 50px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 70px;
+    gap: 50px;
 }
 
 .hero-text {
-    max-width: 700px;
+    max-width: 600px;
 }
 
-.small-text,
-.section-label {
-    color: #ff1744;
-    font-family: 'Orbitron', sans-serif;
-    letter-spacing: 4px;
-    font-size: 12px;
-    margin-bottom: 20px;
-}
-
-.hero h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: clamp(45px, 7vw, 90px);
-    line-height: 1;
-    margin-bottom: 20px;
-}
-
-.hero h1 span {
-    color: #ff1744;
-    text-shadow:
-        0 0 10px #ff1744,
-        0 0 30px rgba(255,23,68,.5);
-}
-
-.hero h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 16px;
-    letter-spacing: 4px;
-    margin-bottom: 25px;
-}
-
-.hero-text > p:not(.small-text) {
-    color: #aaa;
-    max-width: 550px;
-    line-height: 1.8;
-}
-
-
-/* BUTTON */
-
-.btn {
-    display: inline-block;
-    margin-top: 35px;
-    padding: 15px 25px;
-    border: 1px solid #ff1744;
-    color: white;
-    text-decoration: none;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 11px;
-    letter-spacing: 2px;
-    transition: .3s;
-}
-
-.btn:hover {
-    background: #ff1744;
-    box-shadow: 0 0 30px rgba(255,23,68,.5);
-}
-
-
-/* MUSIC CARD */
-
-.music-card {
-    width: 320px;
-    min-width: 320px;
-    padding: 40px 30px;
-    text-align: center;
-
-    background: linear-gradient(145deg,#141414,#090909);
-    border: 1px solid #252525;
-
-    box-shadow:
-        0 0 60px rgba(255,23,68,.08);
-
-    animation: floating 4s ease-in-out infinite;
-}
-
-@keyframes floating {
-    0%,100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-15px);
-    }
-}
-
-
-/* DISC */
-
-.disc {
-    width: 180px;
-    height: 180px;
-    margin: 0 auto 30px;
-
-    border-radius: 50%;
-
-    background:
-        repeating-radial-gradient(
-            circle,
-            #080808 0px,
-            #111 2px,
-            #050505 4px
-        );
-
-    border: 5px solid #1d1d1d;
-
-    position: relative;
-
-    animation: rotate 5s linear infinite;
-}
-
-@keyframes rotate {
-    from {
-        transform: rotate(0);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.disc::before {
-    content: "";
-    position: absolute;
-    inset: 45px;
-    border-radius: 50%;
-    border: 2px solid #ff1744;
-}
-
-.disc-center {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: #ff1744;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-}
-
-.music-card p {
-    font-size: 10px;
-    color: #777;
+.hello {
+    color: #a855f7;
+    font-weight: bold;
     letter-spacing: 3px;
 }
 
-.music-card h3 {
-    margin: 8px 0 25px;
-    font-family: 'Orbitron', sans-serif;
+.hero h1 {
+    font-size: 55px;
+    margin: 10px 0;
+}
+
+.hero h1 span {
+    color: #a855f7;
+}
+
+.hero h3 {
+    color: #d1d1db;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: #aaaabb;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 13px 28px;
+    background: #a855f7;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: translateY(-4px);
+    background: #9333ea;
 }
 
 
-/* EQUALIZER */
+/* Profile */
 
-.equalizer {
+.profile {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5px;
-    height: 40px;
 }
 
-.equalizer span {
-    width: 5px;
-    height: 15px;
-    background: #ff1744;
-    animation: equalizer .7s infinite alternate;
-}
-
-.equalizer span:nth-child(2) {
-    animation-delay: .1s;
-}
-
-.equalizer span:nth-child(3) {
-    animation-delay: .2s;
-}
-
-.equalizer span:nth-child(4) {
-    animation-delay: .3s;
-}
-
-.equalizer span:nth-child(5) {
-    animation-delay: .4s;
-}
-
-.equalizer span:nth-child(6) {
-    animation-delay: .5s;
-}
-
-.equalizer span:nth-child(7) {
-    animation-delay: .6s;
-}
-
-@keyframes equalizer {
-    from {
-        height: 8px;
-    }
-
-    to {
-        height: 38px;
-    }
-}
-
-
-/* SECTION */
-
-.section {
-    min-height: 80vh;
-    padding: 120px 8%;
-}
-
-.section h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: clamp(35px,5vw,65px);
-    margin-bottom: 60px;
-}
-
-
-/* ABOUT */
-
-.about-container {
-    display: grid;
-    grid-template-columns: 350px 1fr;
-    gap: 70px;
-    align-items: center;
-}
-
-.profile-box {
-    padding: 45px 30px;
-    text-align: center;
-
-    background: #101010;
-    border: 1px solid #252525;
-}
-
-.profile-icon {
-    width: 150px;
-    height: 150px;
-    margin: auto;
-
-    display: grid;
-    place-items: center;
+.circle {
+    width: 280px;
+    height: 280px;
 
     border-radius: 50%;
 
-    background: #151515;
-    border: 2px solid #ff1744;
+    background: linear-gradient(
+        135deg,
+        #a855f7,
+        #6366f1
+    );
 
-    font-family: 'Orbitron', sans-serif;
-    font-size: 70px;
-    color: #ff1744;
-
-    box-shadow: 0 0 40px rgba(255,23,68,.25);
-}
-
-.profile-box h3 {
-    font-family: 'Orbitron', sans-serif;
-    margin-top: 25px;
-}
-
-.profile-box p {
-    color: #777;
-    margin-top: 8px;
-    font-size: 13px;
-}
-
-.about-text {
-    color: #aaa;
-    line-height: 1.9;
-    max-width: 650px;
-}
-
-.about-text b {
-    color: white;
-}
-
-.info {
     display: flex;
-    gap: 40px;
-    margin-top: 35px;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 0 60px rgba(168, 85, 247, 0.4);
 }
 
-.info div {
-    display: flex;
-    flex-direction: column;
-}
-
-.info span {
-    font-size: 10px;
-    letter-spacing: 2px;
-    color: #666;
-}
-
-.info b {
-    color: #ff1744;
+.circle span {
+    font-size: 100px;
 }
 
 
-/* MUSIC */
+/* Section */
 
-.music-section {
-    background: #0b0b0b;
+.section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 100px 25px;
 }
 
-.music-grid {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 20px;
+.section h2 {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 35px;
 }
 
-.music-item {
+.section h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #a855f7;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+
+/* About */
+
+.about-box {
+    background: #181827;
     padding: 35px;
-    border: 1px solid #252525;
-    background: #101010;
-    transition: .3s;
+    border-radius: 20px;
+    border: 1px solid #292940;
 }
 
-.music-item:hover {
+.about-box h3 {
+    color: #a855f7;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.about-box p {
+    color: #b5b5c5;
+    margin-bottom: 15px;
+}
+
+
+/* Skills */
+
+.skills-section {
+    max-width: 1200px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #aaaabb;
+    margin-top: -20px;
+    margin-bottom: 40px;
+}
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.skill-card {
+    background: #181827;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #292940;
+    transition: 0.3s;
+}
+
+.skill-card:hover {
     transform: translateY(-8px);
-    border-color: #ff1744;
-    box-shadow: 0 10px 40px rgba(255,23,68,.1);
+    border-color: #a855f7;
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.15);
 }
 
-.music-item span {
-    color: #ff1744;
-    font-family: 'Orbitron', sans-serif;
+.icon {
+    font-size: 45px;
+    margin-bottom: 10px;
 }
 
-.music-item h3 {
-    font-family: 'Orbitron', sans-serif;
-    margin: 20px 0 10px;
+.skill-card h3 {
+    color: #a855f7;
+    margin-bottom: 10px;
 }
 
-.music-item p {
-    color: #777;
-    font-size: 14px;
+.skill-card p {
+    color: #aaaabb;
 }
 
 
-/* CONTACT */
+/* Project */
+
+.project-box {
+    background: #181827;
+    padding: 35px;
+    border-radius: 20px;
+    border: 1px solid #292940;
+}
+
+.project-box h3 {
+    color: #a855f7;
+    margin-bottom: 15px;
+}
+
+.project-box p {
+    color: #aaaabb;
+    margin-bottom: 20px;
+}
+
+.project-box span {
+    display: inline-block;
+    padding: 7px 15px;
+    margin-right: 8px;
+    border-radius: 20px;
+    background: #292940;
+    color: #ddd;
+}
+
+
+/* Contact */
 
 .contact {
     text-align: center;
 }
 
-.contact > p:not(.section-label) {
-    color: #777;
+.contact > p {
+    color: #aaaabb;
 }
 
-.social {
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
+.contact-list {
+    margin-top: 25px;
+    color: #ddd;
 }
 
-.social a {
-    padding: 13px 25px;
-    border: 1px solid #333;
-    color: white;
-    text-decoration: none;
-    font-size: 11px;
-    letter-spacing: 2px;
-    transition: .3s;
-}
-
-.social a:hover {
-    background: #ff1744;
-    border-color: #ff1744;
+.contact-list p {
+    margin: 8px;
 }
 
 
-/* FOOTER */
+/* Footer */
 
 footer {
-    padding: 30px;
     text-align: center;
-    border-top: 1px solid #222;
-    color: #555;
-    font-size: 11px;
-    letter-spacing: 2px;
+    padding: 30px;
+    background: #090912;
+    color: #77778a;
 }
 
 
-/* RESPONSIVE */
+/* Responsive */
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
 
-    header {
-        padding: 20px 5%;
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+        gap: 10px;
     }
 
     nav ul {
-        gap: 15px;
-    }
-
-    nav a {
-        font-size: 9px;
+        gap: 12px;
+        font-size: 13px;
     }
 
     .hero {
-        flex-direction: column;
-        align-items: flex-start;
-        padding-left: 5%;
-        padding-right: 5%;
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 160px;
     }
 
-    .music-card {
-        align-self: center;
+    .hero h1 {
+        font-size: 40px;
     }
 
-    .section {
-        padding-left: 5%;
-        padding-right: 5%;
+    .hero h3 {
+        font-size: 18px;
     }
 
-    .about-container {
+    .circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .circle span {
+        font-size: 70px;
+    }
+
+    .skills {
         grid-template-columns: 1fr;
     }
 
-    .music-grid {
-        grid-template-columns: 1fr;
-    }
 }
