@@ -119,16 +119,14 @@ nav ul li a:hover {
 
 
 /* Profile */
-
-.foto-profil {
-    width: 280px;
-    height: 280px;
-    margin: 40px auto 60px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 5px solid #9b4dff;
-    box-shadow: 0 0 35px rgba(155, 77, 255, 0.6);
+.foto-profil img {
+    width: 100%;
+    height: 100%;
+    object-fit: kontain;
+    object-position: center;
+    display: block;
 }
+
 
 .circle {
     width: 280px;
