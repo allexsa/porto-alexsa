@@ -1,4 +1,4 @@
-* {
+8* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -121,13 +121,13 @@ nav ul li a:hover {
 /* Profile */
 
 .foto-profil {
-    width: 320px;
-    height: 320px;
-    margin: 0 auto 50px;
+    width: 280px;
+    height: 280px;
+    margin: 40px auto 60px;
     border-radius: 50%;
     overflow: hidden;
-    border: 5px solid #8b5cf6;
-    box-shadow: 0 0 40px rgba(139, 92, 246, 0.6);
+    border: 5px solid #9b4dff;
+    box-shadow: 0 0 35px rgba(155, 77, 255, 0.6);
 }
 
 .circle {
