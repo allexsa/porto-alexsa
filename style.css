@@ -120,10 +120,14 @@ nav ul li a:hover {
 
 /* Profile */
 
-.profile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.foto-profil {
+    width: 320px;
+    height: 320px;
+    margin: 0 auto 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #8b5cf6;
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.6);
 }
 
 .circle {
